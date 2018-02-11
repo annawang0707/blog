@@ -1,0 +1,32 @@
+<head>
+<meta charset="utf-8">
+</head>
+<a href="lieluobo://type=position&channel=hr&id=100"> 跳转 </a>
+<p>
+<button onclick="setCookie('_role','1234567890')">设置cookie</button>
+<p>
+<button onclick="getCookie('_role')">获取cookie</button>
+
+<script>
+
+function setCookie(name,value)
+{
+document.cookie = name + "=" + value
+var cookies = document.cookie;
+alert(cookies)
+}
+
+function getCookie(name)
+{
+var strcookie = document.cookie;//获取cookie字符串
+var arrcookie = strcookie.split("; ");//分割
+//遍历匹配
+for ( var i = 0; i < arrcookie.length; i++) {
+var arr = arrcookie[i].split("=");
+if (arr[0] == name){
+alert( arr[1]);
+}
+}
+alert( "error");
+}
+</script>
